@@ -24,6 +24,13 @@ public class Game {
         this.players = players;
     }
 
+    // This is the new constructor that fixes the pipeline error
+    public Game(String name, String genre) {
+        this.name = name;
+        this.genre = genre;
+        this.players = 0; // Initialize players to a default value since it's not provided
+    }
+
     // getters & setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -36,4 +43,14 @@ public class Game {
 
     public Integer getPlayers() { return players; }
     public void setPlayers(Integer players) { this.players = players; }
+
+    @Override
+    public String toString() {
+        return "Game{" +
+               "id=" + id +
+               ", name='" + name + '\'' +
+               ", genre='" + genre + '\'' +
+               ", players=" + players +
+               '}';
+    }
 }
